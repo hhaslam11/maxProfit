@@ -1,0 +1,23 @@
+{
+  "name": "maxprofit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "maxProfit.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhaslam11/maxProfit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhaslam11/maxProfit/issues"
+  },
+  "homepage": "https://github.com/hhaslam11/maxProfit#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
