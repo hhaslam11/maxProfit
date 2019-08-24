@@ -45,7 +45,7 @@ describe('#tradeValue() returns the trade value of two given prices', () => {
     assert.equal(maxProfit.tradeValue(20, 10), 0);
   });
   it('should return 10 if buyPrice is 20 and sellPrice is 30', () => {
-    assert.equal(maxProfit.tradeValue(20, 10), 10);
+    assert.equal(maxProfit.tradeValue(20, 30), 10);
   });
 });
 
