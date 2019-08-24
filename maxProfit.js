@@ -10,30 +10,25 @@ const maxProfit = function(arr) {
     }
   }
 
-
-
+  //split array
   let leftArray = arr.slice(0, Math.floor(arr.length / 2));
   let rightArray = arr.slice(Math.floor(arr.length / 2), arr.length);
 
+  //if the array is small enough (at the lowest level in the stack) then calculate max profit
+  //otherwise, run maxProfit again for each side of the array
   if (leftArray.length < 3 && rightArray.length < 3) {
     
     //get crossTradeValue
     let crossTradeValue = tradeValue(Math.min(...leftArray), Math.max(...rightArray));
     
-    let leftTradeValue = 0;
-    let rightTradeValue = 0;
-
     //get left trade value
-    if (leftArray.length === 2) {
-      leftTradeValue = tradeValue(leftArray[0], leftArray[1]);
-    }
-
+    let leftTradeValue = 0;
+    if (leftArray.length === 2) leftTradeValue = tradeValue(leftArray[0], leftArray[1]);
+    
     //get right trade value
-    if (rightArray.length === 2) {
-      rightTradeValue = tradeValue(rightArray[0], rightArray[1]);
-    }
-
-
+    let rightTradeValue = 0;
+    if (rightArray.length === 2) rightTradeValue = tradeValue(rightArray[0], rightArray[1]);
+    
     return Math.max(leftTradeValue, rightTradeValue, crossTradeValue);
 
   } else {
@@ -48,9 +43,6 @@ const tradeValue = function(buyPrice, sellPrice) {
   if (!Number(buyPrice) || !Number(sellPrice)) return undefined;
   return (sellPrice - buyPrice > 0 ? sellPrice - buyPrice : 0);
 };
-
-
-console.log(maxProfit([45, 24, 35, 31, 40, 38, 11]));
 
 module.exports = {
   maxProfit: maxProfit,
